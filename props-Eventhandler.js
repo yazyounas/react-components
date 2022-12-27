@@ -5,7 +5,7 @@ import React from 'react';
 export class Button extends React.Component {
   render() {
     return (
-      <button onClick={this.props.talk}>
+      <button onClick={this.props.onClick}>
         Click me!
       </button>
     );
@@ -18,7 +18,7 @@ import ReactDOM from 'react-dom';
 import { Button } from './Button';
 
 class Talker extends React.Component {
-  talk() {
+  handleClick() {
     let speech = '';
     for (let i = 0; i < 10000; i++) {
       speech += 'blah ';
@@ -27,7 +27,7 @@ class Talker extends React.Component {
   }
   
   render() {
-    return <Button talk={this.talk} />;
+    return <Button onClick={this.handleClick}/>;
   }
 }
 
